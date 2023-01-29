@@ -24,4 +24,4 @@ You will also need to have the data in excel file format, with columns containin
 
 One example of the Sankey diagram can be found here: 
 
-Screen Shot 2023-01-28 at 8.37.16 PM<img width="1826" alt="image" src="https://user-images.githubusercontent.com/66161458/215300278-4ca4dee9-7422-4be2-97b7-96b35e856ff4.png">
+[Middle Chinese]("https://en.wikipedia.org/wiki/Middle_Chinese") vs. Lishuinese (a dialect of [Wu](https://en.wikipedia.org/wiki/Wu_Chinese)) <img width="1826" alt="image" src="https://user-images.githubusercontent.com/66161458/215300278-4ca4dee9-7422-4be2-97b7-96b35e856ff4.png">
