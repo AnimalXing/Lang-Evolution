@@ -1,3 +1,5 @@
+#This is a python program that examine the historical phonology changes between two languages
+
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
@@ -6,9 +8,9 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 
 
-def lang_evo_sankey(parent_doc,child_doc,parent_char,child_char,parent_conso,child_conso,title):
-    df1 = pd.read_excel(parent_doc)
-    df2 = pd.read_excel(child_doc)
+def lang_evo_sankey(parent_doc,child_doc,parent_char,child_char,parent_conso,child_conso,title,anomaly=0):
+    df1 = pd.read_excel(parent_doc)# name of a excel (xls, xlsx etc.) file that contains the parent language
+    df2 = pd.read_excel(child_doc) # name of a excel (xls, xlsx etc.) file that contains the parent language
     df1_new = df1[[parent_char,parent_conso]]
     df2_new = df2[[child_char,child_conso]]
     df2_new.columns = [parent_char,child_conso]
@@ -31,6 +33,14 @@ def lang_evo_sankey(parent_doc,child_doc,parent_char,child_char,parent_conso,chi
     links['target'] = links['target'].map(mapping_dict)
     print(links)
 
+    drop_l = []
+
+    for index, row in links.iterrows():
+        if row["value"] <= anomaly:
+            drop_l.append(index)
+    print(drop_l)
+    links = links.drop(drop_l).reset_index(drop=True)
+
     links_dict = links.to_dict(orient='list')
 
     print(links_dict)
@@ -38,6 +48,8 @@ def lang_evo_sankey(parent_doc,child_doc,parent_char,child_char,parent_conso,chi
     named_colorscales = ['rgba(251,180,174,0.8)', 'rgba(179,205,227,0.8)', 'rgba(204,235,197,0.8)','rgba(222,203,228,0.8)', 'rgba(254,217,166,0.8)', 'rgba(255,255,204,0.8)', 'rgba(229,216,189,0.8)', 'rgba(253,218,236,0.8)', 'rgba(242,242,242,0.8)']
     all_colour = []
     source_colour = []
+
+    #define colours of nodes (same for one consonant) and flows 
 
     for i in range(len(links['source'])):
         mod = links['source'][i] % (len(named_colorscales))
