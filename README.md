@@ -25,3 +25,43 @@ You will also need to have the data in excel file format, with columns containin
 One example of the Sankey diagram can be found here: 
 
 [Middle Chinese](https://en.wikipedia.org/wiki/Middle_Chinese) vs. Lishuinese (a dialect of [Wu](https://en.wikipedia.org/wiki/Wu_Chinese)) <img width="1826" alt="image" src="https://user-images.githubusercontent.com/66161458/215300278-4ca4dee9-7422-4be2-97b7-96b35e856ff4.png">
+
+A sample input of parent_doc & child_doc is as follows:
+
+Parent_doc: (Old English) 
+
+|   | word      | modern_word | consonant |
+|---|-----------|-------------|-----------|
+| 0 | bēon      | be          | b         |
+| 1 | cūð       | couth       | c         |
+| 2 | dæġ       | day         | d         |
+| 3 | fisc      | fish        | f         |
+| 4 | gōd       | good        | g         |
+| 5 | hring     | ring        | h         |
+| 6 | lēoht     | light       | l         |
+| 7 | mūs       | mouse       | m         |
+| 8 | nēowol    | newfangled  | n         |
+| 9 | pyle      | pile        | p         |
+| 10| rēad      | red         | r         |
+| 11| sāwan     | sow         | s         |
+| 12| þorn     | thorn       | þ         |
+| 13| wæstm     | waste       | w         |
+
+Child_doc: (Modern English)
+
+|   | word      | consonant |
+|---|-----------|-----------|
+| 0 | be        | b         |
+| 1 | couth     | c         |
+| 2 | day       | d         |
+| 3 | fish      | f         |
+| 4 | good      | g         |
+| 5 | ring      | r         |
+| 6 | light     | l         |
+| 7 | mouse     | m         |
+| 8 | newfangled| n         |
+| 9 | pile      | p         |
+| 10| red       | r         |
+| 11| sow       | s         |
+| 12| thorn     | th        |
+| 13| waste     | w         |
